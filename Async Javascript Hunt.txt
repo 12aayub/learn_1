@@ -1,0 +1,29 @@
+1. Asynchronous JavaScript is when you have multiple lines of code without the requirement of running them sequentially. A previously started function can run after it receives information from a later function that obtains information for it.
+
+2. Application program interface (API) is a set of routines, protocols, and tools for building software applications. It allows different software to interact with each other.
+
+3. A callback is a function which is passed into another function as a parameter.
+
+4. An example of a callback would be
+
+function mainFunction(otherFunction) {
+  return otherFunction()
+}
+
+5. w3schools.com, pluralsight.com, stackoverflow.com
+
+6. A promise is an object that provides 2 separate outcomes (resolve or reject) for an asynchronous function.
+
+7.
+
+  var promise1 = new Promise(function(resolve, reject) {
+    resolve(x);
+    reject(y);
+  })
+
+8. developer.mozilla.org, google.com, webopedia.com
+
+9. AJAX stands for Asynchronous Javascript and XML
+(multiple technologies as one unit)
+
+10. Fetch API uses promises to obtain data from another software and defines it for use
