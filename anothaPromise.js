@@ -1,9 +1,11 @@
 var gettingRequest = function(s){
   return new Promise(function(resolve, reject){
   let milliseconds = s * 1000;
-  setTimeout(function(){}, milliseconds)
+  setTimeout(function(){
     var requestFulfilled;
     resolve(requestFulfilled = "Took " + s + " seconds.");
+  }, milliseconds)
+
   });
 }
 
