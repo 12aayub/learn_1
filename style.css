@@ -1,0 +1,75 @@
+body {
+    background-color: rgb(229, 187, 144);
+}
+
+div {
+border: 5px dotted gray;
+padding: 20px;
+margin-top: 20px;
+padding: 5px;
+}
+
+h1 {
+  color:green;
+  font-family: Arial;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(255, 68, 28);
+  border-radius: 5px;
+  display: inline;
+  padding: 3px 3px 3px 6px;
+}
+h2 {
+    color: rgb(75, 144, 243);
+    margin-left: 40px;
+    font-family:Helvetica;
+}
+
+#subDiv1 {
+    float:left;
+    height: auto;
+    width: 500px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+#subDiv2 {
+  float:right;
+  height: auto;
+  width: 500px;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+#subDiv3 {
+  border: 0px;
+  text-align: center;
+}
+
+#subDiv4 {
+  margin: 10px;
+  border: 0px;
+  text-align: center;
+}
+
+
+
+.about {
+  transition: width 0.5s;
+}
+
+.about:hover {
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+
+  transition: width 0.5s;
+  width: 300px;
+
+  transform: rotateZ(-30deg);
+  border-radius:50%;
+}
+
+section {
+  width: 100%;
+}
