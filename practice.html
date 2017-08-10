@@ -3,41 +3,33 @@
   </head>
   <body>
     <h1 id='greeting'></h1>
-     <img id="myImg" src="https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg">
+      <img id="myImg" src="https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg">
     <button onclick="greetNext(), next()" id="myButton">
     <script>
       var currentState = {
         availableGreetings: [
-          { name: "Bob",
-            image:  'https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg',
-            { name: "Mary",
-              image: "2" },
-              { name: "Carson",
-                image: "3" }],
+          {name: "Bob", img: "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"},
+            {name: "Mary", img: "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"},
+              {name: "Carson", img: "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"}
+        ],
         greetingIndex: 0
       }
-
-    // for( var i in currentState.availableGreetings){
-    //   alert(currentState.availableGreetings[i]);
-    // }
 
       var nextState = {
         nextGreetings: ["Bob", "Mary", "Carson"],
         nextIndex: 1
       }
 
-
-      var name= nextState.nextGreetings[nextState.nextIndex];
-      document.getElementById('myButton').innerHTML=name;
-
       var element = document.getElementById('greeting');
-      element.innerHTML = "Hello " +currentState.availableGreetings[currentState.greetingIndex].name +" "+currentState.availableGreetings[currentState.greetingIndex].image;
+      element.innerHTML = "Hello " + currentState.availableGreetings[currentState.greetingIndex].name;
 
-      var image = document.getElementById('myImg');
-      image.src = currentState.availableGreetings[currentState.greetingIndex].image
+      var names = nextState.nextGreetings[nextState.nextIndex];
+      document.getElementById('myButton').innerHTML=names;
 
+      var myImg = document.getElementById('myImg');
+      element.innerHTML = currentState.availableGreetings[currentState.greetingIndex].image;
 
-    function greetNext(){
+      function greetNext(){
         currentState.greetingIndex += 1;
 
         //we need to check to see if we are at the last greeting, and circle around to first if so
@@ -48,14 +40,14 @@
 
         //update the dom with new greeting
         var element = document.getElementById('greeting');
-        element.innerHTML = "Hello " +currentState.availableGreetings[currentState.greetingIndex].name +" "+currentState.availableGreetings[currentState.greetingIndex].image;
+        element.innerHTML = "Hello " +currentState.availableGreetings[currentState.greetingIndex].name;
 
-        var image = document.getElementById('myImg');
-        image.src = currentState.availableGreetings[currentState.greetingIndex].image
+        var myImg = document.getElementById('myImg');
+        element.innerHTML = currentState.availableGreetings[currentState.greetingIndex].image;
 
       }
 
-    function next(){
+      function next(){
         nextState.nextIndex += 1;
 
         //we need to check to see if we are at the last greeting, and circle around to first if so
@@ -67,8 +59,8 @@
         //update the dom with new greeting
 
 
-        var name = document.getElementById('myButton');
-        name.innerHTML = nextState.nextGreetings[nextState.nextIndex];
+        var names = document.getElementById('myButton');
+        names.innerHTML = nextState.nextGreetings[nextState.nextIndex];
 
       }
     </script>
