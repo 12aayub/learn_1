@@ -1,0 +1,76 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1 id='greeting'></h1>
+     <img id="myImg" src="https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg">
+    <button onclick="greetNext(), next()" id="myButton">
+    <script>
+      var currentState = {
+        availableGreetings: [
+          { name: "Bob",
+            image:  'https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg',
+            { name: "Mary",
+              image: "2" },
+              { name: "Carson",
+                image: "3" }],
+        greetingIndex: 0
+      }
+
+    // for( var i in currentState.availableGreetings){
+    //   alert(currentState.availableGreetings[i]);
+    // }
+
+      var nextState = {
+        nextGreetings: ["Bob", "Mary", "Carson"],
+        nextIndex: 1
+      }
+
+
+      var name= nextState.nextGreetings[nextState.nextIndex];
+      document.getElementById('myButton').innerHTML=name;
+
+      var element = document.getElementById('greeting');
+      element.innerHTML = "Hello " +currentState.availableGreetings[currentState.greetingIndex].name +" "+currentState.availableGreetings[currentState.greetingIndex].image;
+
+      var image = document.getElementById('myImg');
+      image.src = currentState.availableGreetings[currentState.greetingIndex].image
+
+
+    function greetNext(){
+        currentState.greetingIndex += 1;
+
+        //we need to check to see if we are at the last greeting, and circle around to first if so
+        if(currentState.greetingIndex == currentState.availableGreetings.length){
+          currentState.greetingIndex = 0;
+
+        }
+
+        //update the dom with new greeting
+        var element = document.getElementById('greeting');
+        element.innerHTML = "Hello " +currentState.availableGreetings[currentState.greetingIndex].name +" "+currentState.availableGreetings[currentState.greetingIndex].image;
+
+        var image = document.getElementById('myImg');
+        image.src = currentState.availableGreetings[currentState.greetingIndex].image
+
+      }
+
+    function next(){
+        nextState.nextIndex += 1;
+
+        //we need to check to see if we are at the last greeting, and circle around to first if so
+        if(nextState.nextIndex == nextState.nextGreetings.length){
+          nextState.nextIndex = 0;
+
+        }
+
+        //update the dom with new greeting
+
+
+        var name = document.getElementById('myButton');
+        name.innerHTML = nextState.nextGreetings[nextState.nextIndex];
+
+      }
+    </script>
+  </body>
+</html>
